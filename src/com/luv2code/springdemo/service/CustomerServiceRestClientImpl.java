@@ -61,7 +61,7 @@ public class CustomerServiceRestClientImpl implements CustomerService {
 
   @Override
   public void deleteCustomer(int id) {
-    logger.info("in deletrCustomer(): Calling REST API " + crmRestUrl + " id: " + id);
+    logger.info("in deleteCustomer(): Calling REST API " + crmRestUrl + " id: " + id);
 
     restTemplate.delete(crmRestUrl + "/" + id);
   }
