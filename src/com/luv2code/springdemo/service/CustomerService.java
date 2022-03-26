@@ -5,7 +5,7 @@ import java.util.List;
 import com.luv2code.springdemo.entity.Customer;
 
 public interface CustomerService {
-  List<Customer> getCustomers(int sortField);
+  List<Customer> getCustomers();
 
   void saveCustomer(Customer customer);
 
