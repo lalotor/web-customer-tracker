@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>List Customer</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h3>CRM - Customer Relationship Manager</h3>
+            <hr/>
+
+            <a th:href="@{/customer/showFormForAdd}" class="btn btn-primary btn-sm mb-3">Add Customer</a>
+
+            <form action="search" method="GET">
+                Search customer: <input type="text" name="searchName" />
+                <input type="submit" value="Search" class="btn btn-info col-2" />
+            </form>
+            <br/>
+
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th><a th:href="@{/customer/list(sort=1)}">First Name</a></th>
+                        <th><a th:href="@{/customer/list(sort=2)}">Last Name</a></th>
+                        <th><a th:href="@{/customer/list(sort=3)}">Email</a></th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="customer : ${customers}">
+                        <td th:text="${customer.firstName}" />
+                        <td th:text="${customer.lastName}" />
+                        <td th:text="${customer.email}" />
+                        <td>
+                            <a th:href="@{/customer/showFormForUpdate(customerId=${customer.id})}"
+                               class="btn btn-info btn-sm">Update</a> |
+                            <a th:href="@{/customer/delete(customerId=${customer.id})}"
+                               class="btn btn-danger btn-sm"
+                               onclick="if (!(confirm('Are you sure you want to delete this employee?'))) return false">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
