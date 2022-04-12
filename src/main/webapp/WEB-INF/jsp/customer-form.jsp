@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>Save Customer</title>
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/add-customer-style.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/add-customer-style.css">
     </head>
     <body>
         <div id="wrapper">
